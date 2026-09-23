@@ -1,443 +1,583 @@
-Create a complete, polished, interactive VR marketplace prototype called **“Campus Reuse”** for **on-campus selling and buying of old, unused, or pre-owned student products**.
-
-The goal is to create a simple virtual campus marketplace where college students can discover, inspect, list, and purchase second-hand items from other students on the same campus.
-
-## Core Concept
-
-Students often have products they no longer use, such as:
-
-* Textbooks and notes
-* Calculators
-* Laptops and accessories
-* Headphones and speakers
-* Cycles
-* Sports equipment
-* Furniture
-* Bags
-* Hostel essentials
-* Electronics
-* Stationery
-* Other useful pre-owned products
-
-The application should make it easy for students to **reuse products, save money, and sell unused items within their campus community**.
-
-## Technical Constraints
-
-You MUST follow all of these requirements:
-
-1. Use **A-Frame WebVR/WebXR**.
-2. Produce **exactly one HTML file** named:
-   `index.html`
-3. Put **all HTML, CSS, and JavaScript inside the same `index.html` file**.
-4. Do not create additional files.
-5. Do not require a build system, npm, React, Vue, Angular, or backend.
-6. Use CDN-based libraries when necessary.
-7. The experience must support **Meta Quest 3S controllers** through WebXR.
-8. The experience must also work on a normal desktop/laptop.
-9. Desktop users must be able to interact using a **keyboard and mouse**.
-10. The page should run by opening `index.html` in a suitable browser/server environment.
-11. Keep the implementation self-contained and easy to understand.
-
-## Platform Support
-
-### Meta Quest 3S
-
-Provide an immersive VR experience with:
-
-* Meta Quest 3S controller support
-* Controller-based pointing
-* Ray interaction
-* Trigger/select interaction
-* Teleport or comfortable movement where appropriate
-* VR UI panels
-* Clearly visible interactive buttons
-* Comfortable scale and spacing
-* Readable text in VR
-* Avoid unnecessary rapid movement
-
-The application should work with standard WebXR-compatible A-Frame interactions.
-
-### Desktop
-
-Provide a desktop fallback with:
-
-* Mouse interaction
-* Keyboard movement
-* WASD movement
-* Arrow-key movement where practical
-* Mouse-look or equivalent camera control
-* Clickable UI elements
-* Ability to enter and exit VR
-
-Display a clear **“Enter VR”** button when WebXR is available.
-
-## Main Experience
-
-Create a visually appealing **virtual college marketplace**.
-
-The scene should look like a modern campus/marketplace environment rather than a plain empty VR room.
-
-Include:
-
-* Campus-inspired surroundings
-* A central marketplace area
-* Product display booths or shelves
-* Floating or wall-mounted category signs
-* Product cards/stands
-* Navigation areas
-* Ambient lighting
-* Clean modern college aesthetic
-* Subtle environmental details
-* Professional presentation suitable for a college project/demo
-
-Do not make the environment excessively complex. Prioritize usability and performance.
-
-## Home / Landing Area
-
-When the experience starts, show a clear welcome area containing:
-
-**CAMPUS REUSE**
-
-“Buy. Sell. Reuse. Save.”
-
-Add a short explanation:
-
-“Buy and sell useful pre-owned products with students on your campus.”
-
-Provide prominent interactive options:
-
-* **Browse Products**
-* **Sell an Item**
-* **My Listings**
-* **Categories**
-* **Search**
-
-## Marketplace
-
-Create multiple product displays representing realistic student items.
-
-Example products:
-
-* Engineering Mathematics Book
-* Scientific Calculator
-* Used Backpack
-* Cycle
-* Wireless Headphones
-* Study Lamp
-* Keyboard
-* Sports Shoes
-* Hostel Chair
-* USB Hub
-
-Each product should have:
-
-* Product name
-* Price
-* Category
-* Condition
-* Seller name
-* Short description
-* Approximate campus location
-* Interactive **View Details** button
-
-Use realistic but fictional data.
-
-## Product Details
-
-When a user selects a product, open a detailed VR/desktop-friendly information panel.
-
-Display:
-
-* Product name
-* Price
-* Category
-* Condition
-* Seller
-* Description
-* Pickup location
-* Posted date
-* Availability status
-
-Provide buttons such as:
-
-* **Contact Seller**
-* **Interested**
-* **Back**
-
-The interaction should feel like a real marketplace while remaining a front-end prototype.
-
-## Search and Categories
-
-Create an interactive category system.
-
-Categories may include:
-
-* Books
-* Electronics
-* Furniture
-* Cycles
-* Hostel Items
-* Sports
-* Accessories
-* Other
-
-Allow users to select categories and update the visible product collection.
-
-Include a simple search interface.
-
-For desktop, allow keyboard input.
-
-For VR, provide a practical alternative such as category filtering or a simple virtual search panel.
-
-## Sell an Item
-
-Create an interactive **Sell an Item** section.
-
-Provide a visual form containing fields for:
-
-* Item name
-* Price
-* Category
-* Condition
-* Description
-* Pickup location
-
-Include:
-
-**POST ITEM**
-
-When submitted:
-
-* Validate required fields
-* Display a confirmation message
-* Add the new item to the local marketplace data
-* Make the new item visible in the marketplace
-
-Because there is no backend, use JavaScript/local in-memory data or localStorage for demo persistence.
-
-## My Listings
-
-Create a section showing products listed by the current user.
-
-Include:
-
-* Item name
-* Price
-* Status
-* Edit button
-* Remove button
-
-Allow users to remove their own demo listings.
-
-## Contact Seller
-
-Since this is a front-end prototype, simulate seller communication.
-
-When **Contact Seller** is selected, display a simple modal/panel:
-
-“Message Seller”
-
-Provide:
-
-* Seller name
-* Sample message field
-* Send button
-
-After sending, show:
-
-“Message sent successfully.”
-
-Do not implement a real messaging backend.
-
-## Interaction Design
-
-Every interactive object should clearly look interactive.
-
-Use:
-
-* Hover states
-* Controller ray highlighting
-* Button animations
-* Press feedback
-* Clear visual hierarchy
-* Consistent UI
-
-Make buttons large enough for comfortable VR selection.
-
-Avoid tiny text and tiny interactive targets.
-
-## Visual Style
-
-Use a modern, attractive, student-friendly design.
-
-Suggested style:
-
-* Clean futuristic campus marketplace
-* Dark or neutral environment with readable UI
-* Soft lighting
-* Slightly futuristic holographic panels
-* Minimal but polished 3D objects
-* Professional colors
-* Strong contrast
-* Modern typography
-
-Do not overload the scene with unnecessary effects.
-
-## User Flow
-
-Implement this complete flow:
-
-**Welcome → Browse Products → Select Category/Product → View Details → Contact Seller/Interested**
-
-And:
-
-**Welcome → Sell an Item → Fill Form → Post Item → Confirmation → Listing Appears**
-
-Also support:
-
-**Welcome → My Listings → View/Edit/Delete**
-
-Users must always have a clear way to return to the previous/main screen.
-
-## Responsive Behavior
-
-The experience must remain usable across:
-
-* Meta Quest 3S VR
-* Desktop browser
-* Different screen sizes
-
-UI should dynamically remain readable and avoid overlapping.
-
-## Performance
-
-Optimize for Meta Quest 3S performance.
-
-Avoid:
-
-* Extremely high-poly models
-* Excessive particle effects
-* Heavy post-processing
-* Large numbers of dynamic objects
-* Unnecessary scripts
-
-Prefer:
-
-* Simple geometry
-* Efficient materials
-* Reusable components
-* Lightweight JavaScript
-* Small number of animated elements
-
-## Accessibility and Usability
-
-Include:
-
-* High-contrast text
-* Clear labels
-* Large VR buttons
-* Simple navigation
-* Visible feedback after actions
-* Error messages for invalid form submissions
-* Instructions for first-time users
-
-At startup, briefly display controls such as:
-
-**VR:** Point + Trigger to interact
-**Desktop:** WASD to move, Mouse to look, Click to interact
-
-## Demo Data
-
-Preload the application with at least **10 realistic fictional campus listings**.
-
-Each listing should contain different:
-
-* Product
-* Price
-* Category
-* Condition
-* Seller
-* Location
-* Description
-
-## Technical Implementation Details
-
-Use A-Frame components and WebXR-compatible interaction techniques.
-
-Organize the JavaScript cleanly inside the same HTML file.
-
-Use reusable JavaScript functions/components for:
-
-* Creating products
-* Opening product details
-* Filtering categories
-* Searching
-* Creating listings
-* Removing listings
-* Showing notifications
-* Navigation
-* VR/desktop controls
-
-Use localStorage when useful so newly created listings can persist during browser reloads.
-
-Handle browser/WebXR limitations gracefully.
-
-If VR is unavailable, the desktop experience must still function.
-
-## Error Handling
-
-The application must not crash because of missing WebXR support or invalid user input.
-
-Display friendly messages such as:
-
-“VR is not available on this device. You can continue using desktop mode.”
-
-or:
-
-“Please enter an item name and price.”
-
-## Final Output Requirement
-
-Return **ONLY the complete contents of `index.html`**.
-
-Do not provide:
-
-* Explanations
-* Markdown
-* Multiple files
-* Setup instructions
-* Placeholder comments instead of implementation
-* Pseudocode
-* Incomplete sections
-
-The output must be a **fully functional single-file prototype** containing:
-
-* A-Frame
-* HTML
-* CSS
-* JavaScript
-* VR support
-* Meta Quest 3S controller interaction
-* Desktop keyboard/mouse interaction
-* Marketplace UI
-* Product browsing
-* Product details
-* Categories
-* Search
-* Sell-item workflow
-* My Listings
-* Contact Seller simulation
-* Demo marketplace data
-* Navigation
-* Feedback/notifications
-* Responsive layout
-
-### Quality Requirement
-
-Make the prototype feel like a **real student startup/product demo**, not a basic classroom HTML example.
-
-Prioritize:
-
-**Functionality → VR usability → Desktop usability → Visual polish → Performance**
-
-Everything must work together inside the single `index.html` file.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Campus Reuse — VR Marketplace</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/1.5.0/aframe.min.js"></script>
+<style>
+  :root{
+    --bg:#0d1117; --panel:#141b24; --panel2:#1b2431; --accent:#4fd1c5; --accent2:#7c5cff;
+    --text:#e8f0f2; --muted:#8b9aa8; --danger:#ff6b6b; --good:#3ddc97;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;height:100%;background:var(--bg);font-family:'Segoe UI',system-ui,-apple-system,sans-serif;color:var(--text);}
+  a-scene{position:fixed;top:0;left:0;width:100%;height:100%;}
+
+  #hud{position:fixed;inset:0;pointer-events:none;z-index:10;}
+  #hud > *{pointer-events:auto;}
+
+  #topbar{position:absolute;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;
+    padding:14px 22px;background:linear-gradient(180deg,rgba(13,17,23,.9),rgba(13,17,23,0));}
+  #brand{font-weight:800;font-size:20px;letter-spacing:.5px;color:var(--accent);}
+  #brand span{color:var(--accent2);}
+  #navbtns button{background:var(--panel2);border:1px solid #2a3644;color:var(--text);padding:8px 14px;margin-left:6px;
+    border-radius:8px;cursor:pointer;font-size:13px;transition:.15s;}
+  #navbtns button:hover{background:var(--accent);color:#04201c;border-color:var(--accent);}
+  #navbtns button.active{background:var(--accent2);border-color:var(--accent2);color:#fff;}
+
+  #panelWrap{position:absolute;left:50%;top:70px;bottom:24px;transform:translateX(-50%);width:min(920px,92vw);
+    background:rgba(20,27,36,.94);border:1px solid #26313e;border-radius:16px;padding:20px 24px;overflow-y:auto;
+    box-shadow:0 20px 60px rgba(0,0,0,.5);backdrop-filter:blur(6px);}
+  h1.title{font-size:28px;margin:6px 0 2px;}
+  .tagline{color:var(--accent);font-weight:600;margin-bottom:4px;}
+  .desc{color:var(--muted);margin-bottom:18px;font-size:14px;}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;}
+  .card{background:var(--panel2);border:1px solid #2a3644;border-radius:12px;padding:14px;transition:.15s;cursor:pointer;}
+  .card:hover{border-color:var(--accent);transform:translateY(-2px);}
+  .card h3{margin:0 0 4px;font-size:15px;}
+  .card .price{color:var(--good);font-weight:700;font-size:16px;}
+  .card .meta{color:var(--muted);font-size:12px;margin:6px 0;}
+  .tag{display:inline-block;background:#233042;color:var(--accent);font-size:11px;padding:2px 8px;border-radius:6px;margin-right:4px;}
+
+  .btn{background:var(--accent);color:#04201c;border:none;padding:10px 16px;border-radius:8px;font-weight:700;
+    cursor:pointer;font-size:13px;transition:.15s;}
+  .btn:hover{background:#6ee9dc;}
+  .btn.secondary{background:var(--panel2);color:var(--text);border:1px solid #2a3644;}
+  .btn.secondary:hover{border-color:var(--accent);}
+  .btn.danger{background:var(--danger);color:#2a0000;}
+
+  .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:14px;}
+  input,select,textarea{background:#0f151c;border:1px solid #2a3644;color:var(--text);padding:9px 12px;border-radius:8px;
+    font-size:13px;width:100%;}
+  label{font-size:12px;color:var(--muted);display:block;margin:10px 0 4px;}
+  .field{margin-bottom:4px;}
+  .formgrid{display:grid;grid-template-columns:1fr 1fr;gap:0 16px;}
+
+  .catchip{padding:7px 14px;border-radius:20px;background:var(--panel2);border:1px solid #2a3644;cursor:pointer;font-size:13px;}
+  .catchip.active{background:var(--accent2);border-color:var(--accent2);color:#fff;}
+
+  #detailBack{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:20;display:none;align-items:center;justify-content:center;}
+  #detailBox{width:min(480px,90vw);background:var(--panel);border:1px solid #2a3644;border-radius:14px;padding:22px;}
+  #detailBox h2{margin-top:0;}
+  .kv{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #202b38;font-size:13px;}
+  .kv b{color:var(--muted);font-weight:500;}
+
+  #toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%);background:var(--good);color:#062b1c;
+    padding:12px 22px;border-radius:10px;font-weight:700;opacity:0;transition:.3s;z-index:40;pointer-events:none;}
+  #toast.show{opacity:1;}
+
+  #startHint{position:fixed;bottom:20px;left:20px;background:rgba(20,27,36,.9);border:1px solid #2a3644;
+    border-radius:10px;padding:12px 16px;font-size:12px;color:var(--muted);max-width:260px;z-index:15;}
+  #vrHint{position:fixed;top:20px;right:20px;z-index:15;background:rgba(20,27,36,.9);border:1px solid #2a3644;
+    border-radius:10px;padding:10px 14px;font-size:12px;color:var(--muted);}
+  .close-x{float:right;cursor:pointer;color:var(--muted);font-size:18px;}
+  .hidden{display:none !important;}
+  ::-webkit-scrollbar{width:8px;} ::-webkit-scrollbar-thumb{background:#2a3644;border-radius:4px;}
+</style>
+</head>
+<body>
+
+<a-scene fog="type:exponential;color:#0d1117;density:0.015" renderer="colorManagement:true" vr-mode-ui="enabled:true">
+  <a-assets>
+    <img id="skyTex" crossorigin="anonymous" src="https://cdn.jsdelivr.net/gh/aframevr/aframe@master/examples/showcase/tiltbrush/sky.jpg">
+    <a-asset-item id="mdlShoe" src="https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/MaterialsVariantsShoe/glTF-Binary/MaterialsVariantsShoe.glb"></a-asset-item>
+    <a-asset-item id="mdlChair" src="https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/SheenChair/glTF-Binary/SheenChair.glb"></a-asset-item>
+    <a-asset-item id="mdlLamp" src="https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/IridescenceLamp/glTF-Binary/IridescenceLamp.glb"></a-asset-item>
+    <a-asset-item id="mdlBoombox" src="https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/BoomBox/glTF-Binary/BoomBox.glb"></a-asset-item>
+    <a-asset-item id="mdlHelmet" src="https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/DamagedHelmet/glTF-Binary/DamagedHelmet.glb"></a-asset-item>
+  </a-assets>
+
+  <a-sky color="#111a24"></a-sky>
+  <a-plane rotation="-90 0 0" width="60" height="60" color="#1a2530" material="roughness:1"></a-plane>
+  <a-entity light="type:ambient;intensity:0.6;color:#8fb"></a-entity>
+  <a-entity light="type:directional;intensity:0.5;color:#bfe" position="3 6 2"></a-entity>
+
+  <!-- Campus environment -->
+  <a-entity id="campus">
+    <!-- central plaza -->
+    <a-cylinder position="0 0.01 -3" radius="7" height="0.02" color="#232f3d"></a-cylinder>
+    <a-cylinder position="0 0.02 -3" radius="1.2" height="0.4" color="#2c3b4c"></a-cylinder>
+    <a-entity position="0 0.75 -3" animation="property: rotation; to: 0 360 0; loop: true; dur: 12000; easing: linear">
+      <a-gltf-model src="#mdlHelmet" scale="0.35 0.35 0.35"></a-gltf-model>
+    </a-entity>
+    <a-text value="REAL 3D MODEL DEMO" align="center" position="0 1.35 -3" width="2.4" color="#ffd166"></a-text>
+    <a-text value="CAMPUS REUSE MARKETPLACE" align="center" position="0 3.6 -9" width="10" color="#4fd1c5"></a-text>
+
+    <!-- walkways -->
+    <a-plane rotation="-90 0 0" position="0 0.015 3" width="2.4" height="14" color="#2c3b4c"></a-plane>
+    <a-plane rotation="-90 0 0" position="-8 0.015 -3" width="14" height="2.2" color="#2c3b4c"></a-plane>
+    <a-plane rotation="-90 0 0" position="8 0.015 -3" width="14" height="2.2" color="#2c3b4c"></a-plane>
+
+    <!-- campus buildings (backdrop) -->
+    <a-box position="-14 2.5 -14" width="6" height="5" depth="6" color="#26313e"></a-box>
+    <a-box position="14 2.5 -14" width="6" height="5" depth="6" color="#26313e"></a-box>
+    <a-box position="0 3 -18" width="10" height="6" depth="5" color="#20293a"></a-box>
+    <a-text value="ACADEMIC BLOCK" align="center" position="0 6.4 -18" width="6" color="#8b9aa8"></a-text>
+    <a-text value="HOSTEL WING" align="center" position="-14 5.4 -14" width="5" color="#8b9aa8"></a-text>
+    <a-text value="SPORTS COMPLEX" align="center" position="14 5.4 -14" width="5" color="#8b9aa8"></a-text>
+
+    <!-- trees -->
+    <a-entity id="trees"></a-entity>
+  </a-entity>
+
+  <!-- Booths -->
+  <a-entity id="booths"></a-entity>
+
+  <!-- 3D product pickups -->
+  <a-entity id="productDisplay"></a-entity>
+
+  <!-- Rig -->
+  <a-entity id="rig" movement-controls="speed:0.12" position="0 0 6">
+    <a-entity id="cam" camera="active:true" position="0 1.6 0" look-controls wasd-controls="acceleration:60"
+      raycaster="objects:.vr-clickable" cursor="fuse:false;rayOrigin:mouse">
+      <a-entity cursor="fuse:false" position="0 0 -1"
+        geometry="primitive:ring;radiusInner:0.006;radiusOuter:0.01" material="color:#4fd1c5;shader:flat"
+        raycaster="objects:.vr-clickable"></a-entity>
+    </a-entity>
+    <a-entity id="lhand" laser-controls="hand:left" raycaster="objects:.vr-clickable;far:8" line="color:#4fd1c5"></a-entity>
+    <a-entity id="rhand" laser-controls="hand:right" raycaster="objects:.vr-clickable;far:8" line="color:#7c5cff"></a-entity>
+  </a-entity>
+
+  <!-- VR panel -->
+  <a-entity id="vrPanel" position="0 1.6 -2.2" visible="false"></a-entity>
+</a-scene>
+
+<div id="hud">
+  <div id="topbar">
+    <div id="brand">CAMPUS<span>REUSE</span></div>
+    <div id="navbtns">
+      <button data-go="home">Home</button>
+      <button data-go="browse">Browse</button>
+      <button data-go="sell">Sell an Item</button>
+      <button data-go="mylistings">My Listings</button>
+    </div>
+  </div>
+
+  <div id="panelWrap"></div>
+
+  <div id="startHint"><b>VR:</b> Point + Trigger to interact.<br><b>Desktop:</b> WASD to move, mouse to look, click to interact.</div>
+  <div id="vrHint">🕶️ WebXR: checking...</div>
+</div>
+
+<div id="detailBack"><div id="detailBox"></div></div>
+<div id="toast"></div>
+
+<script>
+/* ---------------- DATA ---------------- */
+let PRODUCTS = [
+  {id:1,name:"Engineering Mathematics Book",price:250,category:"Books",condition:"Good",seller:"Aarav Mehta",desc:"3rd edition, minimal highlighting, all chapters intact.",loc:"Hostel Block C",date:"2 days ago",avail:true},
+  {id:2,name:"Scientific Calculator",price:400,category:"Electronics",condition:"Like New",seller:"Priya Nair",desc:"Casio fx-991ES, barely used, works perfectly.",loc:"Academic Block 2",date:"5 days ago",avail:true},
+  {id:3,name:"Used Backpack",price:350,category:"Accessories",condition:"Fair",seller:"Rohan Das",desc:"Sturdy laptop backpack, minor wear on straps.",loc:"Hostel Block A",date:"1 week ago",avail:true},
+  {id:4,name:"Cycle",price:2200,category:"Cycles",condition:"Good",seller:"Sneha Iyer",desc:"Single-speed campus cycle, recently serviced.",loc:"Cycle Stand 3",date:"3 days ago",avail:true},
+  {id:5,name:"Wireless Headphones",price:900,category:"Electronics",condition:"Good",seller:"Kabir Singh",desc:"Over-ear, 20hr battery, comes with case.",loc:"Hostel Block B",date:"Today",avail:true},
+  {id:6,name:"Study Lamp",price:180,category:"Hostel Items",condition:"Like New",seller:"Anika Rao",desc:"Adjustable LED desk lamp, 3 brightness modes.",loc:"Hostel Block C",date:"4 days ago",avail:true},
+  {id:7,name:"Mechanical Keyboard",price:1200,category:"Electronics",condition:"Good",seller:"Vikram Joshi",desc:"Blue switches, RGB, tested and working.",loc:"Academic Block 1",date:"6 days ago",avail:true},
+  {id:8,name:"Sports Shoes",price:600,category:"Sports",condition:"Fair",seller:"Meera Pillai",desc:"Size UK 8, good grip, used one semester.",loc:"Sports Complex",date:"2 days ago",avail:true},
+  {id:9,name:"Hostel Chair",price:300,category:"Furniture",condition:"Good",seller:"Aditya Kumar",desc:"Foldable study chair, sturdy frame.",loc:"Hostel Block D",date:"1 week ago",avail:true},
+  {id:10,name:"USB Hub",price:150,category:"Electronics",condition:"Like New",seller:"Ishita Sharma",desc:"4-port USB 3.0 hub, compact and fast.",loc:"Academic Block 2",date:"Today",avail:true}
+];
+const CATEGORIES = ["Books","Electronics","Furniture","Cycles","Hostel Items","Sports","Accessories","Other"];
+try{
+  const saved = JSON.parse(localStorage.getItem('campusreuse_products')||'null');
+  if(saved && Array.isArray(saved) && saved.length) PRODUCTS = saved;
+}catch(e){}
+function persist(){ try{ localStorage.setItem('campusreuse_products', JSON.stringify(PRODUCTS)); }catch(e){} }
+
+let state = { view:"home", category:"All", search:"", inVR:false };
+
+/* ---------------- TOAST ---------------- */
+function toast(msg){
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  clearTimeout(t._h); t._h = setTimeout(()=>t.classList.remove('show'), 2600);
+}
+
+/* ---------------- RENDER: DESKTOP PANEL ---------------- */
+const panel = document.getElementById('panelWrap');
+
+function setActiveNav(v){
+  document.querySelectorAll('#navbtns button').forEach(b=>b.classList.toggle('active', b.dataset.go===v));
+}
+
+function render(){
+  setActiveNav(state.view);
+  if(state.view==="home") renderHome();
+  else if(state.view==="browse") renderBrowse();
+  else if(state.view==="sell") renderSell();
+  else if(state.view==="mylistings") renderMyListings();
+  renderVRPanel();
+}
+
+function renderHome(){
+  panel.innerHTML = `
+    <h1 class="title">CAMPUS REUSE</h1>
+    <div class="tagline">Buy. Sell. Reuse. Save.</div>
+    <div class="desc">Buy and sell useful pre-owned products with students on your campus.</div>
+    <div class="row">
+      <button class="btn" onclick="go('browse')">Browse Products</button>
+      <button class="btn secondary" onclick="go('sell')">Sell an Item</button>
+      <button class="btn secondary" onclick="go('mylistings')">My Listings</button>
+    </div>
+    <label>Categories</label>
+    <div class="row">${CATEGORIES.map(c=>`<span class="catchip" onclick="filterCat('${c}')">${c}</span>`).join('')}</div>
+    <label>Search</label>
+    <div class="row"><input id="homeSearch" placeholder="Search products..." onkeydown="if(event.key==='Enter')doSearch(this.value)"></div>
+  `;
+}
+function filterCat(c){ state.category=c; state.view="browse"; render(); }
+function doSearch(v){ state.search=v; state.category="All"; state.view="browse"; render(); }
+
+function renderBrowse(){
+  const items = PRODUCTS.filter(p=>
+    (state.category==="All"||p.category===state.category) &&
+    (!state.search || p.name.toLowerCase().includes(state.search.toLowerCase())));
+  panel.innerHTML = `
+    <h1 class="title">Browse Products</h1>
+    <div class="row">
+      <input placeholder="Search..." value="${state.search}" oninput="state.search=this.value;renderBrowse();refreshOnly();">
+      <span class="catchip ${state.category==='All'?'active':''}" onclick="state.category='All';go('browse')">All</span>
+      ${CATEGORIES.map(c=>`<span class="catchip ${state.category===c?'active':''}" onclick="state.category='${c}';go('browse')">${c}</span>`).join('')}
+    </div>
+    <div class="grid" id="prodGrid"></div>
+  `;
+  const g = document.getElementById('prodGrid');
+  if(!items.length){ g.innerHTML = `<div class="desc">No products match your filters.</div>`; return; }
+  g.innerHTML = items.map(p=>`
+    <div class="card" onclick="openDetail(${p.id})">
+      <h3>${p.name}</h3>
+      <div class="price">₹${p.price}</div>
+      <div class="meta"><span class="tag">${p.category}</span><span class="tag">${p.condition}</span></div>
+      <div class="meta">Seller: ${p.seller}<br>${p.loc} · ${p.date}</div>
+      <button class="btn secondary" style="margin-top:8px;width:100%;">View Details</button>
+    </div>`).join('');
+}
+function refreshOnly(){ /* placeholder to keep input focus smooth */ }
+
+function openDetail(id){
+  const p = PRODUCTS.find(x=>x.id===id); if(!p) return;
+  const back = document.getElementById('detailBack');
+  document.getElementById('detailBox').innerHTML = `
+    <span class="close-x" onclick="closeDetail()">✕</span>
+    <h2>${p.name}</h2>
+    <div class="kv"><b>Price</b><span>₹${p.price}</span></div>
+    <div class="kv"><b>Category</b><span>${p.category}</span></div>
+    <div class="kv"><b>Condition</b><span>${p.condition}</span></div>
+    <div class="kv"><b>Seller</b><span>${p.seller}</span></div>
+    <div class="kv"><b>Pickup Location</b><span>${p.loc}</span></div>
+    <div class="kv"><b>Posted</b><span>${p.date}</span></div>
+    <div class="kv"><b>Availability</b><span>${p.avail?'Available':'Sold'}</span></div>
+    <p class="desc" style="margin-top:12px;">${p.desc}</p>
+    <div class="row" style="margin-top:14px;">
+      <button class="btn" onclick="contactSeller(${p.id})">Contact Seller</button>
+      <button class="btn secondary" onclick="interested(${p.id})">Interested</button>
+      <button class="btn secondary" onclick="closeDetail()">Back</button>
+    </div>`;
+  back.style.display='flex';
+}
+function closeDetail(){ document.getElementById('detailBack').style.display='none'; }
+function interested(id){ toast("Seller notified that you're interested!"); }
+
+function contactSeller(id){
+  const p = PRODUCTS.find(x=>x.id===id); if(!p) return;
+  document.getElementById('detailBox').innerHTML = `
+    <span class="close-x" onclick="closeDetail()">✕</span>
+    <h2>Message Seller</h2>
+    <div class="kv"><b>Seller</b><span>${p.seller}</span></div>
+    <label>Your message</label>
+    <textarea id="msgField" rows="4" placeholder="Hi, is this still available?"></textarea>
+    <div class="row" style="margin-top:14px;">
+      <button class="btn" onclick="sendMessage()">Send</button>
+      <button class="btn secondary" onclick="openDetail(${p.id})">Back</button>
+    </div>`;
+}
+function sendMessage(){
+  const v = document.getElementById('msgField').value.trim();
+  if(!v){ toast("Please enter a message first."); return; }
+  document.getElementById('detailBox').innerHTML = `<h2>Message sent successfully.</h2>
+    <p class="desc">The seller will get back to you soon.</p>
+    <button class="btn" onclick="closeDetail()">Close</button>`;
+}
+
+function renderSell(){
+  panel.innerHTML = `
+    <h1 class="title">Sell an Item</h1>
+    <div class="desc">Fill in the details below and post your item to the campus marketplace.</div>
+    <div class="formgrid">
+      <div class="field"><label>Item Name *</label><input id="f_name" placeholder="e.g. Used Backpack"></div>
+      <div class="field"><label>Price (₹) *</label><input id="f_price" type="number" placeholder="e.g. 300"></div>
+      <div class="field"><label>Category *</label>
+        <select id="f_cat">${CATEGORIES.map(c=>`<option>${c}</option>`).join('')}</select></div>
+      <div class="field"><label>Condition</label>
+        <select id="f_cond"><option>Like New</option><option>Good</option><option>Fair</option></select></div>
+      <div class="field" style="grid-column:1/3;"><label>Description</label>
+        <textarea id="f_desc" rows="3" placeholder="Short description..."></textarea></div>
+      <div class="field"><label>Pickup Location</label><input id="f_loc" placeholder="e.g. Hostel Block A"></div>
+    </div>
+    <div class="row" style="margin-top:14px;">
+      <button class="btn" onclick="postItem()">POST ITEM</button>
+      <button class="btn secondary" onclick="go('home')">Cancel</button>
+    </div>
+  `;
+}
+function postItem(){
+  const name = document.getElementById('f_name').value.trim();
+  const price = parseFloat(document.getElementById('f_price').value);
+  if(!name || !price || isNaN(price)){ toast("Please enter an item name and price."); return; }
+  const item = {
+    id: Date.now(),
+    name, price,
+    category: document.getElementById('f_cat').value,
+    condition: document.getElementById('f_cond').value,
+    seller: "You",
+    desc: document.getElementById('f_desc').value.trim() || "No description provided.",
+    loc: document.getElementById('f_loc').value.trim() || "Not specified",
+    date: "Just now", avail:true
+  };
+  PRODUCTS.unshift(item); persist(); buildProductPickups();
+  toast("Item posted successfully!");
+  go('mylistings');
+}
+
+function renderMyListings(){
+  const mine = PRODUCTS.filter(p=>p.seller==="You");
+  panel.innerHTML = `
+    <h1 class="title">My Listings</h1>
+    <div class="desc">Items you've posted to Campus Reuse.</div>
+    ${mine.length? `<div class="grid">${mine.map(p=>`
+      <div class="card">
+        <h3>${p.name}</h3><div class="price">₹${p.price}</div>
+        <div class="meta">${p.avail?'<span class="tag">Available</span>':'<span class="tag">Sold</span>'}</div>
+        <div class="row" style="margin-top:8px;">
+          <button class="btn secondary" onclick="editListing(${p.id})">Edit</button>
+          <button class="btn danger" onclick="removeListing(${p.id})">Remove</button>
+        </div>
+      </div>`).join('')}</div>`
+      : `<div class="desc">You haven't listed anything yet. <a href="#" onclick="go('sell');return false;" style="color:var(--accent)">Sell an item</a>.</div>`}
+  `;
+}
+function editListing(id){
+  const p = PRODUCTS.find(x=>x.id===id); if(!p) return;
+  const np = prompt("New price for "+p.name, p.price);
+  if(np && !isNaN(parseFloat(np))){ p.price = parseFloat(np); persist(); toast("Listing updated."); render(); }
+}
+function removeListing(id){
+  PRODUCTS = PRODUCTS.filter(p=>p.id!==id); persist(); buildProductPickups(); toast("Listing removed."); render();
+}
+
+function go(view){ state.view = view; render(); }
+document.querySelectorAll('#navbtns button').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));
+
+/* ---------------- VR SCENE: BOOTHS ---------------- */
+const booths = document.getElementById('booths');
+const boothColors = ["#4fd1c5","#7c5cff","#ff9f6b","#3ddc97","#ffd166"];
+const boothPositions = [[-4,0,-3],[4,0,-3],[-6,0,-1],[6,0,-1],[0,0,-5]];
+CATEGORIES.slice(0,5).forEach((cat,i)=>{
+  const [x,y,z] = boothPositions[i];
+  const g = document.createElement('a-entity');
+  g.setAttribute('position', `${x} ${y} ${z}`);
+  g.innerHTML = `
+    <a-box position="0 0.6 0" width="1.6" height="1.2" depth="0.6" color="${boothColors[i%5]}" metalness="0.2" roughness="0.6"></a-box>
+    <a-box position="-0.85 1.05 0" width="0.08" height="1.9" depth="0.08" color="#2a3644"></a-box>
+    <a-box position="0.85 1.05 0" width="0.08" height="1.9" depth="0.08" color="#2a3644"></a-box>
+    <a-cone position="0 2.1 0" radius-bottom="1.3" radius-top="0" height="0.55" color="${boothColors[i%5]}"
+      material="opacity:0.9" rotation="0 45 0"></a-cone>
+    <a-box position="0 1.25 0.55" width="1.9" height="0.06" depth="0.55" color="#2a3644"></a-box>
+    <a-text value="${cat}" align="center" position="0 1.9 0" color="#ffffff" width="4"></a-text>
+    <a-entity light="type:point;intensity:0.5;distance:4;color:${boothColors[i%5]}" position="0 2.0 0.4"></a-entity>
+    <a-entity class="vr-clickable" geometry="primitive:plane;width:1.6;height:0.4" position="0 1.9 0.31"
+      material="color:#0f151c;opacity:0.85" data-cat="${cat}"></a-entity>
+  `;
+  booths.appendChild(g);
+});
+booths.addEventListener('click', (e)=>{
+  const cat = e.target.getAttribute && e.target.getAttribute('data-cat');
+  if(cat){ state.category = cat; state.view = 'browse'; render(); }
+});
+
+/* ---------------- CAMPUS TREES (decorative) ---------------- */
+const treesEl = document.getElementById('trees');
+const treeSpots = [[-9,-8],[9,-8],[-9,2],[9,2],[-16,2],[16,2],[-3,-16],[3,-16]];
+treeSpots.forEach(([x,z])=>{
+  const t = document.createElement('a-entity');
+  t.setAttribute('position', `${x} 0 ${z}`);
+  t.innerHTML = `
+    <a-cylinder radius="0.12" height="1.1" position="0 0.55 0" color="#4a3324"></a-cylinder>
+    <a-sphere radius="0.65" position="0 1.5 0" color="#2f6b45"></a-sphere>`;
+  treesEl.appendChild(t);
+});
+
+/* ---------------- 3D PRODUCT PICKUPS (distinct low-poly models) ---------------- */
+const productDisplay = document.getElementById('productDisplay');
+const shapeByCategory = {
+  "Books":"box", "Electronics":"box", "Furniture":"box", "Cycles":"cylinder",
+  "Hostel Items":"box", "Sports":"sphere", "Accessories":"box", "Other":"sphere"
+};
+function shapeMarkup(shape,color){
+  if(shape==="cylinder") return `<a-cylinder radius="0.18" height="0.4" color="${color}"></a-cylinder>`;
+  if(shape==="sphere") return `<a-sphere radius="0.22" color="${color}"></a-sphere>`;
+  return `<a-box width="0.32" height="0.32" depth="0.32" color="${color}"></a-box>`;
+}
+function modelFor(p,color){
+  const n = p.name.toLowerCase();
+  if(n.includes('shoe')) return { h:0.55, real:'#mdlShoe', scale:'2.2 2.2 2.2', rot:'0 100 0' };
+  if(n.includes('chair')) return { h:0.85, real:'#mdlChair', scale:'0.42 0.42 0.42', rot:'0 20 0' };
+  if(n.includes('lamp')) return { h:0.9, real:'#mdlLamp', scale:'0.8 0.8 0.8', rot:'0 0 0' };
+  if(n.includes('headphone')) return { h:0.55, real:'#mdlBoombox', scale:'4.2 4.2 4.2', rot:'0 20 0' };
+  if(n.includes('book')) return { h:0.35, html:`
+    <a-box width="0.42" height="0.06" depth="0.3" position="0 0.05 0" color="${color}"></a-box>
+    <a-box width="0.4" height="0.06" depth="0.28" position="0 0.13 0.01" color="#ffffff"></a-box>
+    <a-box width="0.38" height="0.06" depth="0.26" position="0 0.21 0.02" color="${color}"></a-box>` };
+  if(n.includes('calculator')) return { h:0.3, html:`
+    <a-box width="0.28" height="0.42" depth="0.05" color="#1c2530"></a-box>
+    <a-box width="0.22" height="0.1" depth="0.02" position="0 0.13 0.03" color="#8be9dd"></a-box>
+    <a-box width="0.22" height="0.2" depth="0.02" position="0 -0.06 0.03" color="#3a4a5c"></a-box>` };
+  if(n.includes('backpack')||n.includes('bag')) return { h:0.5, html:`
+    <a-box width="0.34" height="0.44" depth="0.22" position="0 0 0" radius="0.05" color="${color}"></a-box>
+    <a-torus radius="0.16" radius-tubular="0.02" position="0 0.24 -0.02" rotation="90 0 0" color="#2a3644"></a-torus>` };
+  if(n.includes('cycle')) return { h:0.9, html:`
+    <a-torus radius="0.32" radius-tubular="0.025" position="-0.32 0.32 0" rotation="0 0 90" color="#1c2530"></a-torus>
+    <a-torus radius="0.32" radius-tubular="0.025" position="0.32 0.32 0" rotation="0 0 90" color="#1c2530"></a-torus>
+    <a-box width="0.66" height="0.04" depth="0.04" position="0 0.5 0" color="${color}"></a-box>
+    <a-box width="0.04" height="0.34" depth="0.04" position="-0.1 0.4 0" rotation="0 0 20" color="${color}"></a-box>
+    <a-box width="0.22" height="0.03" depth="0.03" position="0.32 0.66 0" color="#2a3644"></a-box>` };
+  if(n.includes('keyboard')) return { h:0.2, html:`
+    <a-box width="0.46" height="0.05" depth="0.18" color="#1c2530"></a-box>
+    <a-box width="0.4" height="0.015" depth="0.13" position="0 0.033 0" color="${color}" material="opacity:0.8"></a-box>` };
+  if(n.includes('usb')||n.includes('hub')) return { h:0.15, html:`
+    <a-box width="0.24" height="0.08" depth="0.12" color="${color}"></a-box>
+    <a-cylinder radius="0.015" height="0.06" position="-0.08 -0.01 0.08" rotation="90 0 0" color="#8b9aa8"></a-cylinder>
+    <a-cylinder radius="0.015" height="0.06" position="0.08 -0.01 0.08" rotation="90 0 0" color="#8b9aa8"></a-cylinder>` };
+  const shape = shapeByCategory[p.category] || "box";
+  return { h:0.35, html: shapeMarkup(shape,color) };
+}
+function buildProductPickups(){
+  productDisplay.innerHTML = "";
+  const boothCats = CATEGORIES.slice(0,5);
+  const spread = { };
+  PRODUCTS.slice(0,10).forEach((p,idx)=>{
+    const bi = boothCats.indexOf(p.category);
+    const [bx,by,bz] = bi>=0 ? boothPositions[bi] : [0,0,-8];
+    const n = spread[p.category] = (spread[p.category]||0);
+    spread[p.category] = n+1;
+    const ox = (n%3 - 1) * 0.55;
+    const oz = 0.9 + Math.floor(n/3)*0.5;
+    const color = boothColors[(bi>=0?bi:4)%5];
+    const model = modelFor(p,color);
+    const wrap = document.createElement('a-entity');
+    wrap.setAttribute('position', `${bx+ox} 1.32 ${bz+oz}`);
+    const spin = document.createElement('a-entity');
+    spin.setAttribute('animation', 'property: rotation; to: 0 360 0; loop: true; dur: 9000; easing: linear');
+    spin.innerHTML = `
+      <a-entity class="vr-clickable" data-action="pickup" data-id="${p.id}"
+        geometry="primitive:box;width:0.55;height:0.55;depth:0.55" material="opacity:0;transparent:true"></a-entity>
+      ${model.real ? `<a-gltf-model src="${model.real}" scale="${model.scale}" rotation="${model.rot||'0 0 0'}"></a-gltf-model>` : model.html}
+    `;
+    wrap.appendChild(spin);
+    const label = document.createElement('a-text');
+    label.setAttribute('value', `${p.name}\n₹${p.price}`);
+    label.setAttribute('align','center');
+    label.setAttribute('position', `0 ${model.h+0.35} 0`);
+    label.setAttribute('width','1.6');
+    label.setAttribute('color','#ffffff');
+    wrap.appendChild(label);
+    productDisplay.appendChild(wrap);
+  });
+}
+buildProductPickups();
+productDisplay.addEventListener('click',(e)=>{
+  const el = e.target;
+  const action = el.getAttribute && el.getAttribute('data-action');
+  if(action!=='pickup') return;
+  const id = parseInt(el.getAttribute('data-id'));
+  if(state.inVR){ state.view='detail'; state.detailId=id; render(); }
+  else { openDetail(id); }
+});
+
+/* ---------------- VR PANEL (in-scene UI) ---------------- */
+const vrPanel = document.getElementById('vrPanel');
+function vrBtn(id,label,y,color){
+  return `<a-entity class="vr-clickable" data-action="${id}" geometry="primitive:plane;width:1.6;height:0.22"
+    position="0 ${y} 0" material="color:${color||'#1b2431'};opacity:0.95">
+    <a-text value="${label}" align="center" color="#ffffff" width="2.6" position="0 0 0.01"></a-text>
+  </a-entity>`;
+}
+function renderVRPanel(){
+  vrPanel.innerHTML = `<a-plane width="2" height="1.8" color="#0d1117" opacity="0.85" position="0 0 -0.02"></a-plane>`;
+  let y = 0.75, html = "";
+  if(state.view==="home"){
+    html += `<a-text value="CAMPUS REUSE" align="center" position="0 0.9 0" width="3" color="#4fd1c5"></a-text>`;
+    html += vrBtn('browse','Browse Products',0.5);
+    html += vrBtn('sell','Sell an Item',0.2);
+    html += vrBtn('mylistings','My Listings',-0.1);
+    html += vrBtn('categories','Categories',-0.4);
+  } else if(state.view==="browse"){
+    const items = PRODUCTS.filter(p=> state.category==="All"||p.category===state.category).slice(0,4);
+    html += `<a-text value="${state.category} — Browse" align="center" position="0 0.9 0" width="2.6" color="#4fd1c5"></a-text>`;
+    items.forEach((p,i)=>{
+      html += `<a-entity class="vr-clickable" data-action="detail" data-id="${p.id}"
+        geometry="primitive:plane;width:1.6;height:0.3" position="0 ${0.55-i*0.35} 0" material="color:#1b2431">
+        <a-text value="${p.name} — ₹${p.price}" align="center" color="#ffffff" width="2.4" position="0 0 0.01"></a-text>
+      </a-entity>`;
+    });
+    html += vrBtn('home','Back',-0.85,'#233042');
+  } else if(state.view==="detail"){
+    const p = PRODUCTS.find(x=>x.id===state.detailId);
+    if(p){
+      html += `<a-text value="${p.name}" align="center" position="0 0.85 0" width="2.4" color="#4fd1c5"></a-text>`;
+      html += `<a-text value="₹${p.price}  ·  ${p.category}\n${p.condition}  ·  Seller: ${p.seller}\n${p.loc}  ·  ${p.date}" align="center" position="0 0.5 0" width="1.7" color="#c7d3dc"></a-text>`;
+      html += `<a-text value="${p.desc}" align="center" position="0 0.15 0" width="1.6" color="#8b9aa8"></a-text>`;
+      html += vrBtn('interested','Interested',-0.25,'#233042');
+      html += vrBtn('home','Back',-0.58,'#233042');
+    }
+  } else if(state.view==="sell"){
+    html += `<a-text value="Sell an Item" align="center" position="0 0.85 0" width="2.6" color="#4fd1c5"></a-text>`;
+    html += `<a-text value="Use desktop panel to fill the form,\nor switch out of VR to submit." align="center" position="0 0.4 0" width="1.9" color="#c7d3dc"></a-text>`;
+    html += vrBtn('home','Back',-0.3,'#233042');
+  } else if(state.view==="mylistings"){
+    const mine = PRODUCTS.filter(p=>p.seller==="You").slice(0,4);
+    html += `<a-text value="My Listings" align="center" position="0 0.85 0" width="2.6" color="#4fd1c5"></a-text>`;
+    if(!mine.length) html += `<a-text value="No listings yet." align="center" position="0 0.4 0" width="2" color="#c7d3dc"></a-text>`;
+    mine.forEach((p,i)=>{
+      html += `<a-text value="${p.name} — ₹${p.price}" align="center" position="0 ${0.5-i*0.3} 0" width="2" color="#c7d3dc"></a-text>`;
+    });
+    html += vrBtn('home','Back',-0.85,'#233042');
+  }
+  vrPanel.innerHTML += html;
+}
+vrPanel.addEventListener('click',(e)=>{
+  const el = e.target;
+  const action = el.getAttribute && el.getAttribute('data-action');
+  if(!action) return;
+  if(action==='browse'||action==='home'||action==='sell'||action==='mylistings'){ state.view = action==='categories'?'browse':action; render(); }
+  else if(action==='categories'){ state.category='All'; state.view='browse'; render(); }
+  else if(action==='detail'){ state.view='detail'; state.detailId=parseInt(el.getAttribute('data-id')); render(); }
+  else if(action==='interested'){ toast("Seller notified that you're interested!"); }
+});
+
+/* ---------------- VR MODE TOGGLE ---------------- */
+const sceneEl = document.querySelector('a-scene');
+const hud = document.getElementById('hud');
+sceneEl.addEventListener('enter-vr', ()=>{
+  state.inVR = true; hud.classList.add('hidden'); vrPanel.setAttribute('visible', true);
+});
+sceneEl.addEventListener('exit-vr', ()=>{
+  state.inVR = false; hud.classList.remove('hidden'); vrPanel.setAttribute('visible', false);
+});
+
+/* ---------------- WEBXR AVAILABILITY ---------------- */
+const vrHintEl = document.getElementById('vrHint');
+if(navigator.xr && navigator.xr.isSessionSupported){
+  navigator.xr.isSessionSupported('immersive-vr').then(ok=>{
+    vrHintEl.textContent = ok ? "🕶️ WebXR ready — use Enter VR button" : "🕶️ VR not available on this device. Desktop mode active.";
+  }).catch(()=>{ vrHintEl.textContent = "🕶️ VR not available on this device. Desktop mode active."; });
+} else {
+  vrHintEl.textContent = "🕶️ VR is not available on this device. You can continue using desktop mode.";
+}
+
+/* ---------------- INIT ---------------- */
+render();
+</script>
+</body>
+</html>
