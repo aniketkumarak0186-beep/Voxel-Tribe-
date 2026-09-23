@@ -1,0 +1,443 @@
+Create a complete, polished, interactive VR marketplace prototype called **“Campus Reuse”** for **on-campus selling and buying of old, unused, or pre-owned student products**.
+
+The goal is to create a simple virtual campus marketplace where college students can discover, inspect, list, and purchase second-hand items from other students on the same campus.
+
+## Core Concept
+
+Students often have products they no longer use, such as:
+
+* Textbooks and notes
+* Calculators
+* Laptops and accessories
+* Headphones and speakers
+* Cycles
+* Sports equipment
+* Furniture
+* Bags
+* Hostel essentials
+* Electronics
+* Stationery
+* Other useful pre-owned products
+
+The application should make it easy for students to **reuse products, save money, and sell unused items within their campus community**.
+
+## Technical Constraints
+
+You MUST follow all of these requirements:
+
+1. Use **A-Frame WebVR/WebXR**.
+2. Produce **exactly one HTML file** named:
+   `index.html`
+3. Put **all HTML, CSS, and JavaScript inside the same `index.html` file**.
+4. Do not create additional files.
+5. Do not require a build system, npm, React, Vue, Angular, or backend.
+6. Use CDN-based libraries when necessary.
+7. The experience must support **Meta Quest 3S controllers** through WebXR.
+8. The experience must also work on a normal desktop/laptop.
+9. Desktop users must be able to interact using a **keyboard and mouse**.
+10. The page should run by opening `index.html` in a suitable browser/server environment.
+11. Keep the implementation self-contained and easy to understand.
+
+## Platform Support
+
+### Meta Quest 3S
+
+Provide an immersive VR experience with:
+
+* Meta Quest 3S controller support
+* Controller-based pointing
+* Ray interaction
+* Trigger/select interaction
+* Teleport or comfortable movement where appropriate
+* VR UI panels
+* Clearly visible interactive buttons
+* Comfortable scale and spacing
+* Readable text in VR
+* Avoid unnecessary rapid movement
+
+The application should work with standard WebXR-compatible A-Frame interactions.
+
+### Desktop
+
+Provide a desktop fallback with:
+
+* Mouse interaction
+* Keyboard movement
+* WASD movement
+* Arrow-key movement where practical
+* Mouse-look or equivalent camera control
+* Clickable UI elements
+* Ability to enter and exit VR
+
+Display a clear **“Enter VR”** button when WebXR is available.
+
+## Main Experience
+
+Create a visually appealing **virtual college marketplace**.
+
+The scene should look like a modern campus/marketplace environment rather than a plain empty VR room.
+
+Include:
+
+* Campus-inspired surroundings
+* A central marketplace area
+* Product display booths or shelves
+* Floating or wall-mounted category signs
+* Product cards/stands
+* Navigation areas
+* Ambient lighting
+* Clean modern college aesthetic
+* Subtle environmental details
+* Professional presentation suitable for a college project/demo
+
+Do not make the environment excessively complex. Prioritize usability and performance.
+
+## Home / Landing Area
+
+When the experience starts, show a clear welcome area containing:
+
+**CAMPUS REUSE**
+
+“Buy. Sell. Reuse. Save.”
+
+Add a short explanation:
+
+“Buy and sell useful pre-owned products with students on your campus.”
+
+Provide prominent interactive options:
+
+* **Browse Products**
+* **Sell an Item**
+* **My Listings**
+* **Categories**
+* **Search**
+
+## Marketplace
+
+Create multiple product displays representing realistic student items.
+
+Example products:
+
+* Engineering Mathematics Book
+* Scientific Calculator
+* Used Backpack
+* Cycle
+* Wireless Headphones
+* Study Lamp
+* Keyboard
+* Sports Shoes
+* Hostel Chair
+* USB Hub
+
+Each product should have:
+
+* Product name
+* Price
+* Category
+* Condition
+* Seller name
+* Short description
+* Approximate campus location
+* Interactive **View Details** button
+
+Use realistic but fictional data.
+
+## Product Details
+
+When a user selects a product, open a detailed VR/desktop-friendly information panel.
+
+Display:
+
+* Product name
+* Price
+* Category
+* Condition
+* Seller
+* Description
+* Pickup location
+* Posted date
+* Availability status
+
+Provide buttons such as:
+
+* **Contact Seller**
+* **Interested**
+* **Back**
+
+The interaction should feel like a real marketplace while remaining a front-end prototype.
+
+## Search and Categories
+
+Create an interactive category system.
+
+Categories may include:
+
+* Books
+* Electronics
+* Furniture
+* Cycles
+* Hostel Items
+* Sports
+* Accessories
+* Other
+
+Allow users to select categories and update the visible product collection.
+
+Include a simple search interface.
+
+For desktop, allow keyboard input.
+
+For VR, provide a practical alternative such as category filtering or a simple virtual search panel.
+
+## Sell an Item
+
+Create an interactive **Sell an Item** section.
+
+Provide a visual form containing fields for:
+
+* Item name
+* Price
+* Category
+* Condition
+* Description
+* Pickup location
+
+Include:
+
+**POST ITEM**
+
+When submitted:
+
+* Validate required fields
+* Display a confirmation message
+* Add the new item to the local marketplace data
+* Make the new item visible in the marketplace
+
+Because there is no backend, use JavaScript/local in-memory data or localStorage for demo persistence.
+
+## My Listings
+
+Create a section showing products listed by the current user.
+
+Include:
+
+* Item name
+* Price
+* Status
+* Edit button
+* Remove button
+
+Allow users to remove their own demo listings.
+
+## Contact Seller
+
+Since this is a front-end prototype, simulate seller communication.
+
+When **Contact Seller** is selected, display a simple modal/panel:
+
+“Message Seller”
+
+Provide:
+
+* Seller name
+* Sample message field
+* Send button
+
+After sending, show:
+
+“Message sent successfully.”
+
+Do not implement a real messaging backend.
+
+## Interaction Design
+
+Every interactive object should clearly look interactive.
+
+Use:
+
+* Hover states
+* Controller ray highlighting
+* Button animations
+* Press feedback
+* Clear visual hierarchy
+* Consistent UI
+
+Make buttons large enough for comfortable VR selection.
+
+Avoid tiny text and tiny interactive targets.
+
+## Visual Style
+
+Use a modern, attractive, student-friendly design.
+
+Suggested style:
+
+* Clean futuristic campus marketplace
+* Dark or neutral environment with readable UI
+* Soft lighting
+* Slightly futuristic holographic panels
+* Minimal but polished 3D objects
+* Professional colors
+* Strong contrast
+* Modern typography
+
+Do not overload the scene with unnecessary effects.
+
+## User Flow
+
+Implement this complete flow:
+
+**Welcome → Browse Products → Select Category/Product → View Details → Contact Seller/Interested**
+
+And:
+
+**Welcome → Sell an Item → Fill Form → Post Item → Confirmation → Listing Appears**
+
+Also support:
+
+**Welcome → My Listings → View/Edit/Delete**
+
+Users must always have a clear way to return to the previous/main screen.
+
+## Responsive Behavior
+
+The experience must remain usable across:
+
+* Meta Quest 3S VR
+* Desktop browser
+* Different screen sizes
+
+UI should dynamically remain readable and avoid overlapping.
+
+## Performance
+
+Optimize for Meta Quest 3S performance.
+
+Avoid:
+
+* Extremely high-poly models
+* Excessive particle effects
+* Heavy post-processing
+* Large numbers of dynamic objects
+* Unnecessary scripts
+
+Prefer:
+
+* Simple geometry
+* Efficient materials
+* Reusable components
+* Lightweight JavaScript
+* Small number of animated elements
+
+## Accessibility and Usability
+
+Include:
+
+* High-contrast text
+* Clear labels
+* Large VR buttons
+* Simple navigation
+* Visible feedback after actions
+* Error messages for invalid form submissions
+* Instructions for first-time users
+
+At startup, briefly display controls such as:
+
+**VR:** Point + Trigger to interact
+**Desktop:** WASD to move, Mouse to look, Click to interact
+
+## Demo Data
+
+Preload the application with at least **10 realistic fictional campus listings**.
+
+Each listing should contain different:
+
+* Product
+* Price
+* Category
+* Condition
+* Seller
+* Location
+* Description
+
+## Technical Implementation Details
+
+Use A-Frame components and WebXR-compatible interaction techniques.
+
+Organize the JavaScript cleanly inside the same HTML file.
+
+Use reusable JavaScript functions/components for:
+
+* Creating products
+* Opening product details
+* Filtering categories
+* Searching
+* Creating listings
+* Removing listings
+* Showing notifications
+* Navigation
+* VR/desktop controls
+
+Use localStorage when useful so newly created listings can persist during browser reloads.
+
+Handle browser/WebXR limitations gracefully.
+
+If VR is unavailable, the desktop experience must still function.
+
+## Error Handling
+
+The application must not crash because of missing WebXR support or invalid user input.
+
+Display friendly messages such as:
+
+“VR is not available on this device. You can continue using desktop mode.”
+
+or:
+
+“Please enter an item name and price.”
+
+## Final Output Requirement
+
+Return **ONLY the complete contents of `index.html`**.
+
+Do not provide:
+
+* Explanations
+* Markdown
+* Multiple files
+* Setup instructions
+* Placeholder comments instead of implementation
+* Pseudocode
+* Incomplete sections
+
+The output must be a **fully functional single-file prototype** containing:
+
+* A-Frame
+* HTML
+* CSS
+* JavaScript
+* VR support
+* Meta Quest 3S controller interaction
+* Desktop keyboard/mouse interaction
+* Marketplace UI
+* Product browsing
+* Product details
+* Categories
+* Search
+* Sell-item workflow
+* My Listings
+* Contact Seller simulation
+* Demo marketplace data
+* Navigation
+* Feedback/notifications
+* Responsive layout
+
+### Quality Requirement
+
+Make the prototype feel like a **real student startup/product demo**, not a basic classroom HTML example.
+
+Prioritize:
+
+**Functionality → VR usability → Desktop usability → Visual polish → Performance**
+
+Everything must work together inside the single `index.html` file.
