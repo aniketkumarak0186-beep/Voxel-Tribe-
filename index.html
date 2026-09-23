@@ -86,15 +86,6 @@
 <body>
 
 <a-scene fog="type:exponential;color:#0d1117;density:0.015" renderer="colorManagement:true" vr-mode-ui="enabled:true">
-  <a-assets timeout="5000">
-    <img id="skyTex" crossorigin="anonymous" src="https://cdn.jsdelivr.net/gh/aframevr/aframe@master/examples/showcase/tiltbrush/sky.jpg">
-    <a-asset-item id="mdlShoe" src="https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/MaterialsVariantsShoe/glTF-Binary/MaterialsVariantsShoe.glb"></a-asset-item>
-    <a-asset-item id="mdlChair" src="https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/SheenChair/glTF-Binary/SheenChair.glb"></a-asset-item>
-    <a-asset-item id="mdlLamp" src="https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/IridescenceLamp/glTF-Binary/IridescenceLamp.glb"></a-asset-item>
-    <a-asset-item id="mdlBoombox" src="https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/BoomBox/glTF-Binary/BoomBox.glb"></a-asset-item>
-    <a-asset-item id="mdlHelmet" src="https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/DamagedHelmet/glTF-Binary/DamagedHelmet.glb"></a-asset-item>
-  </a-assets>
-
   <a-sky color="#111a24"></a-sky>
   <a-plane rotation="-90 0 0" width="60" height="60" color="#1a2530" material="roughness:1"></a-plane>
   <a-entity light="type:ambient;intensity:0.6;color:#8fb"></a-entity>
@@ -106,7 +97,7 @@
     <a-cylinder position="0 0.01 -3" radius="7" height="0.02" color="#232f3d"></a-cylinder>
     <a-cylinder position="0 0.02 -3" radius="1.2" height="0.4" color="#2c3b4c"></a-cylinder>
     <a-entity position="0 0.75 -3" animation="property: rotation; to: 0 360 0; loop: true; dur: 12000; easing: linear">
-      <a-gltf-model src="#mdlHelmet" scale="0.35 0.35 0.35"></a-gltf-model>
+      <a-gltf-model src="https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/DamagedHelmet/glTF-Binary/DamagedHelmet.glb" scale="0.35 0.35 0.35"></a-gltf-model>
     </a-entity>
     <a-text value="REAL 3D MODEL DEMO" align="center" position="0 1.35 -3" width="2.4" color="#ffd166"></a-text>
     <a-text value="CAMPUS REUSE MARKETPLACE" align="center" position="0 3.6 -9" width="10" color="#4fd1c5"></a-text>
@@ -427,10 +418,10 @@ function shapeMarkup(shape,color){
 }
 function modelFor(p,color){
   const n = p.name.toLowerCase();
-  if(n.includes('shoe')) return { h:0.55, real:'#mdlShoe', scale:'2.2 2.2 2.2', rot:'0 100 0' };
-  if(n.includes('chair')) return { h:0.85, real:'#mdlChair', scale:'0.42 0.42 0.42', rot:'0 20 0' };
-  if(n.includes('lamp')) return { h:0.9, real:'#mdlLamp', scale:'0.8 0.8 0.8', rot:'0 0 0' };
-  if(n.includes('headphone')) return { h:0.55, real:'#mdlBoombox', scale:'4.2 4.2 4.2', rot:'0 20 0' };
+  if(n.includes('shoe')) return { h:0.55, real:'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/MaterialsVariantsShoe/glTF-Binary/MaterialsVariantsShoe.glb', scale:'2.2 2.2 2.2', rot:'0 100 0' };
+  if(n.includes('chair')) return { h:0.85, real:'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/SheenChair/glTF-Binary/SheenChair.glb', scale:'0.42 0.42 0.42', rot:'0 20 0' };
+  if(n.includes('lamp')) return { h:0.9, real:'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/IridescenceLamp/glTF-Binary/IridescenceLamp.glb', scale:'0.8 0.8 0.8', rot:'0 0 0' };
+  if(n.includes('headphone')) return { h:0.55, real:'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/BoomBox/glTF-Binary/BoomBox.glb', scale:'4.2 4.2 4.2', rot:'0 20 0' };
   if(n.includes('book')) return { h:0.35, html:`
     <a-box width="0.42" height="0.06" depth="0.3" position="0 0.05 0" color="${color}"></a-box>
     <a-box width="0.4" height="0.06" depth="0.28" position="0 0.13 0.01" color="#ffffff"></a-box>
@@ -440,7 +431,7 @@ function modelFor(p,color){
     <a-box width="0.22" height="0.1" depth="0.02" position="0 0.13 0.03" color="#8be9dd"></a-box>
     <a-box width="0.22" height="0.2" depth="0.02" position="0 -0.06 0.03" color="#3a4a5c"></a-box>` };
   if(n.includes('backpack')||n.includes('bag')) return { h:0.5, html:`
-    <a-box width="0.34" height="0.44" depth="0.22" position="0 0 0" radius="0.05" color="${color}"></a-box>
+    <a-box width="0.34" height="0.44" depth="0.22" position="0 0 0" color="${color}"></a-box>
     <a-torus radius="0.16" radius-tubular="0.02" position="0 0.24 -0.02" rotation="90 0 0" color="#2a3644"></a-torus>` };
   if(n.includes('cycle')) return { h:0.9, html:`
     <a-torus radius="0.32" radius-tubular="0.025" position="-0.32 0.32 0" rotation="0 0 90" color="#1c2530"></a-torus>
