@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Campus Reuse — VR Marketplace</title>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/1.5.0/aframe.min.js"></script>
+<script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
 <style>
   :root{
     --bg:#0d1117; --panel:#141b24; --panel2:#1b2431; --accent:#4fd1c5; --accent2:#7c5cff;
@@ -29,6 +29,10 @@
   #panelWrap{position:absolute;left:50%;top:70px;bottom:24px;transform:translateX(-50%);width:min(920px,92vw);
     background:rgba(20,27,36,.94);border:1px solid #26313e;border-radius:16px;padding:20px 24px;overflow-y:auto;
     box-shadow:0 20px 60px rgba(0,0,0,.5);backdrop-filter:blur(6px);}
+  @media (min-width: 760px){
+    #panelWrap{left:22px;right:auto;transform:none;width:min(410px,38vw);background:rgba(20,27,36,.88);}
+    #startHint{left:auto;right:20px;bottom:20px;}
+  }
   h1.title{font-size:28px;margin:6px 0 2px;}
   .tagline{color:var(--accent);font-weight:600;margin-bottom:4px;}
   .desc{color:var(--muted);margin-bottom:18px;font-size:14px;}
@@ -75,12 +79,14 @@
   .close-x{float:right;cursor:pointer;color:var(--muted);font-size:18px;}
   .hidden{display:none !important;}
   ::-webkit-scrollbar{width:8px;} ::-webkit-scrollbar-thumb{background:#2a3644;border-radius:4px;}
+  .pickup-hit{cursor:pointer;}
+  .pickup-hit:hover{opacity:.8;}
 </style>
 </head>
 <body>
 
 <a-scene fog="type:exponential;color:#0d1117;density:0.015" renderer="colorManagement:true" vr-mode-ui="enabled:true">
-  <a-assets>
+  <a-assets timeout="5000">
     <img id="skyTex" crossorigin="anonymous" src="https://cdn.jsdelivr.net/gh/aframevr/aframe@master/examples/showcase/tiltbrush/sky.jpg">
     <a-asset-item id="mdlShoe" src="https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/MaterialsVariantsShoe/glTF-Binary/MaterialsVariantsShoe.glb"></a-asset-item>
     <a-asset-item id="mdlChair" src="https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/SheenChair/glTF-Binary/SheenChair.glb"></a-asset-item>
@@ -129,7 +135,7 @@
   <a-entity id="productDisplay"></a-entity>
 
   <!-- Rig -->
-  <a-entity id="rig" movement-controls="speed:0.12" position="0 0 6">
+  <a-entity id="rig" position="0 0 6">
     <a-entity id="cam" camera="active:true" position="0 1.6 0" look-controls wasd-controls="acceleration:60"
       raycaster="objects:.vr-clickable" cursor="fuse:false;rayOrigin:mouse">
       <a-entity cursor="fuse:false" position="0 0 -1"
@@ -470,7 +476,7 @@ function buildProductPickups(){
     const spin = document.createElement('a-entity');
     spin.setAttribute('animation', 'property: rotation; to: 0 360 0; loop: true; dur: 9000; easing: linear');
     spin.innerHTML = `
-      <a-entity class="vr-clickable" data-action="pickup" data-id="${p.id}"
+      <a-entity class="vr-clickable pickup-hit" data-action="pickup" data-id="${p.id}"
         geometry="primitive:box;width:0.55;height:0.55;depth:0.55" material="opacity:0;transparent:true"></a-entity>
       ${model.real ? `<a-gltf-model src="${model.real}" scale="${model.scale}" rotation="${model.rot||'0 0 0'}"></a-gltf-model>` : model.html}
     `;
